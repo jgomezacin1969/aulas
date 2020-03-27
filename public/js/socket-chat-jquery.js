@@ -27,7 +27,7 @@ function renderizarUsuarios(personas) { // [{},{},{}]
             usuarioBold = '<span>' + usuario;
         }
 
-        cfile = (usuario === "LAURA" || usuario === "JUANMA" || usuario === "PEPELU") ? usuario : "1";
+        cfile = (usuario === "LAURA" || usuario === "JUANMA" || usuario === "PEPELU") ? usuario : "2";
         html += '<li>';
         html += '    <a data-id="' + personas[i].id + '"  href="javascript:void(0)"><img src="assets/images/users/' + cfile + '.jpg" alt="user-img" class="img-circle"> ' + usuarioBold + ' <small class="text-success">online</small></span></a>';
         html += '</li>';
@@ -42,18 +42,20 @@ function renderizarMensaje(lpropio, data) { // [{},{},{}]
     let sala = data.sala;
     let mensa = data.mensaje;
 
+    let cfile = (usuario === "LAURA" || usuario === "JUANMA" || usuario === "PEPELU") ? usuario : "2";
+
     // var html = divChatbox.html();
     var html = '';
 
     if (lpropio) {
         html += '<li class="">';
-        html += '<div class="chat-img"><img src="assets/images/users/' + usuario + '.jpg" alt="user" /></div>';
+        html += '<div class="chat-img"><img src="assets/images/users/' + cfile + '.jpg" alt="user" /></div>';
         html += '<div class="chat-content">';
         html += '<h5>' + usuario + '</h5>';
         html += '<div class="box bg-light-inverse">' + mensa + '</div>';
     } else {
         html += '<li class="animated fadeIn">';
-        html += '<div class="chat-img"><img src="assets/images/users/' + usuario + '.jpg" alt="user" /></div>';
+        html += '<div class="chat-img"><img src="assets/images/users/' + cfile + '.jpg" alt="user" /></div>';
         html += '<div class="chat-content">';
         html += '<h5>' + usuario + '</h5>';
         html += '<div class="box bg-light-info">' + mensa + '</div>';
