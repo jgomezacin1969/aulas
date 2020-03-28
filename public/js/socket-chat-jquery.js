@@ -80,7 +80,10 @@ divUsuarios.on('click', 'a', function() {
 });
 
 frmEnviar.submit((e) => {
+
     let texto = edtMensaje.val();
+    edtMensaje.val("");
+
     // alert("Texto a enviar:" + texto);
     let today = new Date();
 
@@ -89,7 +92,9 @@ frmEnviar.submit((e) => {
     let mensa = { usuario: usuario.nombre, sala: usuario.sala, mensaje: texto, hora: hora };
     // console.log(mensa);
     socket.emit('mensajeASala', mensa, (data) => { console.log(data); });
+
     renderizarMensaje(true, mensa);
+
     e.preventDefault();
 });
 
